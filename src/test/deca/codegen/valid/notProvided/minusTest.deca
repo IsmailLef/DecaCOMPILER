@@ -1,0 +1,8 @@
+// output : 10
+
+{
+    int i = 5;
+    int j = 10;
+    int k = 35;
+    print(k - j*2 - i);
+}

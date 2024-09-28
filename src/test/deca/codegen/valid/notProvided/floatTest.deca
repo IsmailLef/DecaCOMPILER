@@ -1,0 +1,9 @@
+//output 10.0
+
+{
+    float a = 5.0;
+    float b = 5.0;
+    float c = 10.0;
+    float d = 10.0;
+    print(a + b + c + d);
+}

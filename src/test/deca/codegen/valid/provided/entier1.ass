@@ -1,0 +1,54 @@
+; start main program
+; Main program
+	TSTO #1	; 0 temporary and params on stack + 1 (variables) + 15 (registers) 
+	BOV Stack_Over_Flow_Error
+	ADDSP #1
+; Beginning of main declarations
+	LOAD #null, R2
+	STORE R2, 1(GB)
+; Beginning of main instructions:
+; assigning a value to an existant variable
+	LOAD #1, R2
+	STORE R2, 1(GB)
+	LOAD 1(GB), R1
+	WINT
+	WNL
+; assigning a value to an existant variable
+; Setting the ADD Operation
+	LOAD 1(GB), R2
+	LOAD #1, R3
+; Setting the ADD Operation
+	ADD R2, R3
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+	STORE R3, 1(GB)
+	LOAD 1(GB), R1
+	WINT
+	WNL
+	HALT
+; End Main program
+Zero_Division_Error:
+	WSTR "ERROR : Division by zero not allowed."
+	WNL
+	ERROR
+Stack_Over_Flow_Error:
+	WSTR "ERROR : StackOverflow."
+	WNL
+	ERROR
+Over_Flow_Error:
+	WSTR "ERROR : Overflow during arithmetic operation."
+	WNL
+	ERROR
+io_Error:
+	WSTR "ERROR : inpput/output error."
+	WNL
+	ERROR
+Over_Flow_Cmp:
+	WSTR "ERROR :  Overflow during comparing operation."
+	WNL
+	ERROR
+Over_Flow_Bool:
+	WSTR "ERROR :  Overflow during boolean operation."
+	WNL
+	ERROR
+; end main program

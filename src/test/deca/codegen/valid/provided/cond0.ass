@@ -1,0 +1,50 @@
+; start main program
+; Main program
+	TSTO #0	; 0 temporary and params on stack + 0 (variables) + 15 (registers) 
+	BOV Stack_Over_Flow_Error
+; Beginning of main declarations
+; Beginning of main instructions:
+if0:
+; Setting up the GreaterThanOrEqual Op
+	LOAD #1, R2
+	LOAD #0, R3
+	CMP R3, R2
+	SGE R3
+	BOV Over_Flow_Cmp
+; Fin GreaterOrEqual
+	CMP #1, R3
+	BNE else0
+	WSTR "ok"
+	WNL
+	BRA fi0
+else0:
+	WSTR "erreur"
+	WNL
+fi0:
+	HALT
+; End Main program
+Zero_Division_Error:
+	WSTR "ERROR : Division by zero not allowed."
+	WNL
+	ERROR
+Stack_Over_Flow_Error:
+	WSTR "ERROR : StackOverflow."
+	WNL
+	ERROR
+Over_Flow_Error:
+	WSTR "ERROR : Overflow during arithmetic operation."
+	WNL
+	ERROR
+io_Error:
+	WSTR "ERROR : inpput/output error."
+	WNL
+	ERROR
+Over_Flow_Cmp:
+	WSTR "ERROR :  Overflow during comparing operation."
+	WNL
+	ERROR
+Over_Flow_Bool:
+	WSTR "ERROR :  Overflow during boolean operation."
+	WNL
+	ERROR
+; end main program

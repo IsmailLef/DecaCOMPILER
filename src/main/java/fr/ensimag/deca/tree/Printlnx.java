@@ -1,0 +1,33 @@
+package fr.ensimag.deca.tree;
+
+import fr.ensimag.deca.DecacCompiler;
+import fr.ensimag.ima.pseudocode.GPRegister;
+import fr.ensimag.ima.pseudocode.Label;
+import fr.ensimag.ima.pseudocode.instructions.WNL;
+
+/**
+ * @author gl37
+ * @date 01/01/2023
+ */
+public class Printlnx extends AbstractPrint {
+
+    /**
+     * @param arguments arguments passed to the print(...) statement.
+     * @param printHex if true, then float should be displayed as hexadecimal (printlnx)
+     */
+    public Printlnx(boolean printHex, ListExpr arguments) {
+        super(printHex, arguments);
+    }
+
+    @Override
+    protected GPRegister codeGenInst(DecacCompiler compiler) {
+        super.codeGenInst(compiler);
+        compiler.addInstruction(new WNL());
+        return null;
+    }
+
+    @Override
+    String getSuffix() {
+        return "lnx";
+    }
+}

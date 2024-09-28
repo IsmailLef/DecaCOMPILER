@@ -1,0 +1,121 @@
+; start main program
+; Main program
+	TSTO #2	; 0 temporary and params on stack + 2 (variables) + 15 (registers) 
+	BOV Stack_Over_Flow_Error
+	ADDSP #2
+; Beginning of main declarations
+	LOAD #42, R2
+	STORE R2, 1(GB)
+	LOAD #0, R2
+	STORE R2, 2(GB)
+; Beginning of main instructions:
+; Setting up the WHILE instruction
+While0:
+; Setting up not operation
+; Setting up the Equals Op
+	LOAD 1(GB), R2
+	LOAD #1, R3
+	CMP R2, R3
+	SEQ R3
+	BOV Over_Flow_Cmp
+; Fin EQUALS
+	CMP #1, R3
+	SNE R3
+	BOV Over_Flow_Cmp
+	CMP #1, R3
+	BNE fin_while0
+if0:
+; Setting up the Equals Op
+; Setting the MODULO Operation
+	LOAD 1(GB), R2
+	LOAD #2, R3
+; Setting the MODULO Operation
+	CMP #0, R3
+	BEQ Zero_Division_Error
+	REM R3, R2
+	BOV Over_Flow_Error
+; END OF Division OPERATION
+	LOAD #0, R3
+	CMP R2, R3
+	SEQ R3
+	BOV Over_Flow_Cmp
+; Fin EQUALS
+	CMP #1, R3
+	BNE else0
+; assigning a value to an existant variable
+; Setting the Division Operation
+	LOAD 1(GB), R2
+	LOAD #2, R3
+; Setting the Division Operation
+	CMP #0, R3
+	BEQ Zero_Division_Error
+	QUO R3, R2
+	BOV Over_Flow_Error
+; END OF Division OPERATION
+	STORE R2, 1(GB)
+	BRA fi0
+else0:
+; assigning a value to an existant variable
+; Setting the ADD Operation
+; Setting the ADD Operation
+; Setting the ADD Operation
+	LOAD #2, R2
+	LOAD 1(GB), R3
+; Setting the ADD Operation
+	MUL R2, R3
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+	LOAD 1(GB), R2
+; Setting the ADD Operation
+	ADD R3, R2
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+	LOAD #1, R3
+; Setting the ADD Operation
+	ADD R2, R3
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+	STORE R3, 1(GB)
+fi0:
+; assigning a value to an existant variable
+; Setting the ADD Operation
+	LOAD 2(GB), R2
+	LOAD #1, R3
+; Setting the ADD Operation
+	ADD R2, R3
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+	STORE R3, 2(GB)
+	BRA While0
+fin_while0:
+; End of WHILE instruction
+	LOAD 2(GB), R1
+	WINT
+	WNL
+	HALT
+; End Main program
+Zero_Division_Error:
+	WSTR "ERROR : Division by zero not allowed."
+	WNL
+	ERROR
+Stack_Over_Flow_Error:
+	WSTR "ERROR : StackOverflow."
+	WNL
+	ERROR
+Over_Flow_Error:
+	WSTR "ERROR : Overflow during arithmetic operation."
+	WNL
+	ERROR
+io_Error:
+	WSTR "ERROR : inpput/output error."
+	WNL
+	ERROR
+Over_Flow_Cmp:
+	WSTR "ERROR :  Overflow during comparing operation."
+	WNL
+	ERROR
+Over_Flow_Bool:
+	WSTR "ERROR :  Overflow during boolean operation."
+	WNL
+	ERROR
+; end main program

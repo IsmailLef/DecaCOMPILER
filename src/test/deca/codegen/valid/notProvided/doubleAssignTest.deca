@@ -1,0 +1,7 @@
+// output : 5
+
+{   
+    int i;
+    int j = i = 5;
+    print(i);
+}

@@ -1,0 +1,25 @@
+//output "ok"
+
+{
+    int i = 0;
+    int j = 1;
+    float a = 0.0;
+    boolean b = false;
+    if(i > a){
+        if(!b){
+            println("this should not be printed");
+        }
+        else{
+            println("this should no be printed");
+        }
+    }
+    else if (i == a){
+        while(b){
+            println("this should not be printed");
+        }
+        println("ok");
+    }
+    else{
+        println("this should not be printed");
+    }
+}

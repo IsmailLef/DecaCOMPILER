@@ -1,0 +1,40 @@
+//output : "Success"
+
+{
+    int i = 0, j = 0, k = 0;
+    boolean a = (5 > 3 && 7 < 10) || (8 >= 8 && 6 <= 6) && (2 != 3 || 4 == 4);
+    boolean b = ((5 / 3) > 0) && ((7 * 2) <= 10) || ((2 * 3) >= 1);
+    int x =56 +8-75*31/15;
+    float y = (103 +(13+(1+(86+(10+(9+(1+(7+((39+29+19+24)+(5+(4+(3+(2+(1+(99.0+(9+(1+(8+99))))))))))))))))));
+    float l = (104-(13- 1-(86-(10.5-(9-(1-(7-(9-(5-(4-(3-(2-(1-(99-(9-(1-(8-99)))))))))))))))));
+    int z = (1 + 1) + ((2 + 2) - ((3 + 3) % ((4 + 4) + ((5 + 5) + ((6 + 6) + ((7 + 7)))))));
+    boolean c = ((x < y) && (y <= z)) || ((x > z) && !(y > z)) ;
+    
+    
+    boolean d = false, e = true, f = false, g = true, h = false, ii = true, jj = false, kk = false, l = true, m = false, n = false, o = true, p = true, q = false;
+    
+    boolean r = (((a && b) || (c && (d || e))) && ((!f) || (g && (!h)))) || (((ii || jj) && (kk || (!l))) && ((m && (!n)) || (o && (p || q))));
+    if(r){print("Success");}
+    else{println("failure");}
+    
+    while (i < 3) {
+        while (j < 4) {
+            while (k < 5) {
+                if (i == j && j == k) {
+                    if((c && (d || r)) || p){print("i, j and k are equal");}
+                }   else if (i < j && j > k) {
+                    print("i is the greatest, followed by j and k");
+                } else if (i == j && j > k) {
+                    print("i and j are equal and greater than k");
+                } else if (i < j && j == k) {
+                    print("i is greater than j and k are equal");
+                } else {
+                    print("other scenario");
+                }
+                k=k+1;
+            }
+            j=j+1;
+        }
+        i=i+1;
+    }
+}

@@ -1,0 +1,270 @@
+; start main program
+; Main program
+	TSTO #6	; 0 temporary and params on stack + 6 (variables) + 15 (registers) 
+	BOV Stack_Over_Flow_Error
+	ADDSP #6
+; Beginning of main declarations
+	LOAD #0x0.0p0, R2
+	STORE R2, 1(GB)
+	LOAD #0x1.0p0, R2
+	STORE R2, 2(GB)
+; Setting up the UnaryMinus Op
+	LOAD #0x1.0p0, R2
+	OPP R2, R2
+	BOV Over_Flow_Error
+; Fin UnaryMinus Op
+	STORE R2, 3(GB)
+	LOAD #0x1.6fc2ecp-1, R2
+	STORE R2, 4(GB)
+	LOAD #null, R2
+	STORE R2, 5(GB)
+	LOAD #null, R2
+	STORE R2, 6(GB)
+; Beginning of main instructions:
+; Setting up the WHILE instruction
+While0:
+; Setting up the GreaterThanOrEqual Op
+	LOAD 2(GB), R2
+; Setting the ADD Operation
+	LOAD 1(GB), R3
+	LOAD #0x1.0p-23, R4
+; Setting the ADD Operation
+	ADD R3, R4
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+	CMP R4, R2
+	SGE R4
+	BOV Over_Flow_Cmp
+; Fin GreaterOrEqual
+	CMP #1, R4
+	BNE fin_while0
+; assigning a value to an existant variable
+; Setting the Division Operation
+; Setting the ADD Operation
+	LOAD 1(GB), R2
+	LOAD 2(GB), R3
+; Setting the ADD Operation
+	ADD R2, R3
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+	LOAD #0x1.0p1, R2
+; Setting the Division Operation
+	LOAD #0, R1
+	FLOAT R1, R1
+	CMP R1, R2
+	BEQ Zero_Division_Error
+	DIV R2, R3
+	BOV Over_Flow_Error
+; END OF Division OPERATION
+	STORE R3, 5(GB)
+; assigning a value to an existant variable
+; Setting the MINUS Operation
+; Setting the ADD Operation
+	LOAD 5(GB), R2
+; Setting the ADD Operation
+; Setting the ADD Operation
+	LOAD 5(GB), R3
+; Setting the ADD Operation
+; Setting the ADD Operation
+	LOAD 5(GB), R4
+; Setting the ADD Operation
+; Setting the ADD Operation
+	LOAD 5(GB), R5
+; Setting the ADD Operation
+; Setting the ADD Operation
+	LOAD 5(GB), R6
+; Setting the ADD Operation
+; Setting the ADD Operation
+	LOAD 5(GB), R7
+; Setting the ADD Operation
+; Setting the ADD Operation
+	LOAD 5(GB), R8
+; Setting the Division Operation
+	LOAD #0x1.0p0, R9
+	LOAD #0x1.3bp12, R10
+; Setting the Division Operation
+	LOAD #0, R1
+	FLOAT R1, R1
+	CMP R1, R10
+	BEQ Zero_Division_Error
+	DIV R10, R9
+	BOV Over_Flow_Error
+; END OF Division OPERATION
+; Setting the ADD Operation
+	MUL R8, R9
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+; Setting the Division Operation
+	LOAD #0x1.0p0, R8
+	LOAD #0x1.68p9, R10
+; Setting the Division Operation
+	LOAD #0, R1
+	FLOAT R1, R1
+	CMP R1, R10
+	BEQ Zero_Division_Error
+	DIV R10, R8
+	BOV Over_Flow_Error
+; END OF Division OPERATION
+; Setting the ADD Operation
+	ADD R9, R8
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+; Setting the ADD Operation
+	MUL R7, R8
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+; Setting the Division Operation
+	LOAD #0x1.0p0, R7
+	LOAD #0x1.ep6, R9
+; Setting the Division Operation
+	LOAD #0, R1
+	FLOAT R1, R1
+	CMP R1, R9
+	BEQ Zero_Division_Error
+	DIV R9, R7
+	BOV Over_Flow_Error
+; END OF Division OPERATION
+; Setting the ADD Operation
+	ADD R8, R7
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+; Setting the ADD Operation
+	MUL R6, R7
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+; Setting the Division Operation
+	LOAD #0x1.0p0, R6
+	LOAD #0x1.8p4, R8
+; Setting the Division Operation
+	LOAD #0, R1
+	FLOAT R1, R1
+	CMP R1, R8
+	BEQ Zero_Division_Error
+	DIV R8, R6
+	BOV Over_Flow_Error
+; END OF Division OPERATION
+; Setting the ADD Operation
+	ADD R7, R6
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+; Setting the ADD Operation
+	MUL R5, R6
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+; Setting the Division Operation
+	LOAD #0x1.0p0, R5
+	LOAD #0x1.8p2, R7
+; Setting the Division Operation
+	LOAD #0, R1
+	FLOAT R1, R1
+	CMP R1, R7
+	BEQ Zero_Division_Error
+	DIV R7, R5
+	BOV Over_Flow_Error
+; END OF Division OPERATION
+; Setting the ADD Operation
+	ADD R6, R5
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+; Setting the ADD Operation
+	MUL R4, R5
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+; Setting the Division Operation
+	LOAD #0x1.0p0, R4
+	LOAD #0x1.0p1, R6
+; Setting the Division Operation
+	LOAD #0, R1
+	FLOAT R1, R1
+	CMP R1, R6
+	BEQ Zero_Division_Error
+	DIV R6, R4
+	BOV Over_Flow_Error
+; END OF Division OPERATION
+; Setting the ADD Operation
+	ADD R5, R4
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+; Setting the ADD Operation
+	MUL R3, R4
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+	LOAD #0x1.0p0, R3
+; Setting the ADD Operation
+	ADD R4, R3
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+; Setting the ADD Operation
+	MUL R2, R3
+	BOV Over_Flow_Error
+; END OF ADD OPERATION
+; Setting up the ConvFloat Op
+	LOAD #1, R2
+	FLOAT R2, R2
+; End of ConvFloat Op
+; Setting the MINUS Operation
+	SUB R2, R3
+	LOAD R3, R2
+	BOV Over_Flow_Error
+; END OF MINUS OPERATION
+	STORE R2, 6(GB)
+if0:
+; Setting up the GreaterThan Op
+	LOAD 6(GB), R2
+	LOAD #0x0.0p0, R3
+	CMP R3, R2
+	SGT R3
+	BOV Over_Flow_Cmp
+; Fin Greater
+	CMP #1, R3
+	BNE else0
+; assigning a value to an existant variable
+	LOAD 5(GB), R2
+	STORE R2, 2(GB)
+; assigning a value to an existant variable
+	LOAD 6(GB), R2
+	STORE R2, 4(GB)
+	BRA fi0
+else0:
+; assigning a value to an existant variable
+	LOAD 5(GB), R2
+	STORE R2, 1(GB)
+; assigning a value to an existant variable
+	LOAD 6(GB), R2
+	STORE R2, 3(GB)
+fi0:
+	BRA While0
+fin_while0:
+; End of WHILE instruction
+	LOAD 1(GB), R1
+	WFLOAT
+	WSTR " = "
+	LOAD 1(GB), R1
+	WFLOATX
+	HALT
+; End Main program
+Zero_Division_Error:
+	WSTR "ERROR : Division by zero not allowed."
+	WNL
+	ERROR
+Stack_Over_Flow_Error:
+	WSTR "ERROR : StackOverflow."
+	WNL
+	ERROR
+Over_Flow_Error:
+	WSTR "ERROR : Overflow during arithmetic operation."
+	WNL
+	ERROR
+io_Error:
+	WSTR "ERROR : inpput/output error."
+	WNL
+	ERROR
+Over_Flow_Cmp:
+	WSTR "ERROR :  Overflow during comparing operation."
+	WNL
+	ERROR
+Over_Flow_Bool:
+	WSTR "ERROR :  Overflow during boolean operation."
+	WNL
+	ERROR
+; end main program

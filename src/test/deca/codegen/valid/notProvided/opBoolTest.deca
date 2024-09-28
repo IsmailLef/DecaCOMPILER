@@ -1,0 +1,12 @@
+// output : ok
+
+{
+    boolean a = true;
+    boolean b = false;
+    if (!(a && b)){
+        print("ok");
+    }
+    else{
+        print("this should be printed");
+    }
+}

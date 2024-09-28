@@ -1,0 +1,12 @@
+// output : 1.00000e+01
+            5.25000e+02
+            1.80000e+02
+
+{
+    int i = 5;
+    int j = 10;
+    float k = 35;
+    println(k - j*2 - i);
+    println(k * (i + j));
+    println((1 + k) * 5);
+}

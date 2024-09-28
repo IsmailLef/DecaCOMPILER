@@ -1,0 +1,56 @@
+// Description:
+//    tests conditionnelle
+//
+// Resultats:
+//    ok
+// 
+// Historique:
+//    cree le 01/01/2023
+
+{
+   //int a;
+   //float x = 5.0/2;
+   //println(-(-(-(-(-5)))));
+   //println((1 + 1) + ((2 + 2) - ((3 + 3) % ((4 + 4) + ((5 + 5) + ((6 + 6) + ((7 + 7))))))));
+   //println((1+ 1) + ((2 + 2) + ((3+3) + ((4+4) + ((5+5) + ((6+6)))))));
+   //println(9%(-1));
+   
+   //if (a) {print("look");} 
+    //int x = 1;
+    /*println( (1 + 1) + ((1 + 1) + ((1 + 1) + ((1 + 1) + ((1 + 1) + ((1 + 1) + ((1 + 1) + ((1 + 1) + ((1 + 1) + ((1 + 1) + ((1 + 1) + ((1 + 1) + ((1 + 1) + ((1 + 1) + ((1 + 1) + ((1 + 1) + ((1 + 1) + (1 + 1))))))))))))))))));
+    println(y);*/
+
+    int i = (104-(13- 1-(86-(10-(9-(1-(7-(9-(5-(4-(3-(2-(1-(99-(9-(1-(8-99)))))))))))))))));
+    print(i);
+    //int j = (103 +(13+(1+(86+(10+(9+(1+(7+(9+(5+(4+(3+(2+(1+(99+(9+(1+(8+99))))))))))))))))));
+    println(1 + 21);
+    //int k = 1.0;
+    /*int i;
+    int j = i = 5;  */
+    //println(" i = ", i, " and j = ", j);
+
+    //boolean a = !((5.0 + 6/2) == 7);
+    /*int i = 10; 
+    while (i != 0) { 
+	if (i == 5) {println(i);}
+	else if ( i == 4) {println("on est dans else if", i);}
+	else {println("on est dans else" , i);} 
+	i = i - 1;
+    }*/
+    /*
+    int i = 1;
+    if (i==2) {println("if1");}
+    else if (i==1) {
+        if (i != 5.0) {println("elsif1");}
+        else {println("else dial elsif1");}
+        println("PRIIIINTABLE DIMA");
+    }
+    
+    if (i != 1) {
+        
+    }
+    else {
+        println("else2");
+    }
+  */
+}

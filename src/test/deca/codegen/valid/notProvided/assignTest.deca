@@ -1,0 +1,7 @@
+// output = 19
+{
+    int i;
+    int j = 18;
+    i = j + 1;
+    println(i);
+}

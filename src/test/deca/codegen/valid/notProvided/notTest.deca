@@ -1,0 +1,11 @@
+// output : ok
+
+{
+    boolean a = true;
+    if (!a){
+        print("this should not be printed");
+    }
+    else{
+        print("ok");
+    }
+}

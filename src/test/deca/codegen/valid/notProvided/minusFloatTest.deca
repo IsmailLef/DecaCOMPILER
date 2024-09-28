@@ -1,0 +1,12 @@
+// 1.00000e+01
+// -2.50000e+01
+// 2.00000e+01
+
+{
+    int i = 5;
+    int j = 10;
+    float k = 35;
+    println(k - j*2 - i);
+    println(-1 - 2*j - 4.0);
+    println(k - (i+j));
+}

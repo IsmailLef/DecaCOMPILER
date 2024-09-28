@@ -1,0 +1,6 @@
+//output : 3
+{
+    int i = 10;
+    int j = 3;
+    println(i / j);
+}

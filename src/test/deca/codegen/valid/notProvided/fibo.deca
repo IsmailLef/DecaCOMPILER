@@ -1,0 +1,13 @@
+{   int n = 9;
+        int a = 0;
+        int b = 1;
+        int c = 0;
+        int i = 2;
+        while (i <= n) {
+            c = a + b;
+            a = b;
+            b = c;
+            i = i + 1;
+            }
+        println(b);
+}

@@ -1,0 +1,11 @@
+// output : ok
+{
+    boolean a = true;
+    boolean b = false;
+    if ((a && b) || (10 < 100)){
+        print("ok");
+    }
+    else{
+        print("this should not be printed");
+    }
+}

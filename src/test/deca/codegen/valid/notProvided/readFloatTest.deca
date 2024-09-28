@@ -1,0 +1,7 @@
+// output : variable
+
+{
+    int j = 5;
+    float k = readFloat()/2;
+    print(k + j*2 + readFloat());
+}

@@ -1,0 +1,12 @@
+// output : ok
+
+{
+    int i = 5;
+    int j = 7;
+    if (j <= i){
+        print("this should not be printed");
+    }
+    else{
+        print("ok");
+    }
+}

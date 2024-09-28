@@ -1,0 +1,9 @@
+// output : equals
+{
+    if (1 !=1){
+        print("not equals");
+    }
+    else{
+        print("equals");
+    }
+}

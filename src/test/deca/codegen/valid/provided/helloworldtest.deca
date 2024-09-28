@@ -1,0 +1,18 @@
+// Description:
+//    tests de print et println
+//
+// Resultats:
+//    hello world from println
+//    hello world from print
+
+{
+   int i = 12;
+   int j = 3;
+   int k = 5;
+   int m = 7;
+   float c = 1.1;
+   println("hello world from println");
+   print("hello world from print");
+
+}
+
